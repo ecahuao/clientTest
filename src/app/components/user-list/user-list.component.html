@@ -1,0 +1,30 @@
+<div class="col-md-2">
+      <button class="btn btn-primary btn-indigo" routerLink="/users/add" >
+            <i class ="fas fa-plus-circle"></i>
+      </button>
+</div>
+<div class="col-md-4" *ngFor="let user of users" >
+      <div class="card text-center" >
+            <div class="card-header  justify-content bg-dark  text-white align-items-center d-flex" style="height: 40px;">
+                  <div class="col-md-9">
+                        {{user.userName}} 
+                  </div>
+                  <div class="col-md-1">    
+                        <button class="btn btn-danger" (click)="deleteUser(user.id)" style="height:40px;">
+                        <i class="fas fa-trash-alt"></i>
+                        </button>
+                  </div>
+            </div>
+            <div class="card-body">
+                  <p>
+                        {{user.firstName}}   {{user.lastName}}
+                  </p>
+                 <!-- <a [routerLink]="['/user/edit',user.id]" class="btn btn-icon btn-block btn-indigo">
+                        EDIT USER
+                  </a> -->
+                  <button type="button" class="btn btn-outline-primary" [routerLink]="['/user/edit',user.id]" btn-lg btn-block>edit user</button>
+                  <button type="button" class="btn btn-outline-info" [routerLink]="['/softuser/edit',user.id]"  btn-sm>Software</button>
+                  <button type="button" class="btn btn-outline-dark" btn-sm>Hardware</button>
+            </div>
+      </div>
+</div>

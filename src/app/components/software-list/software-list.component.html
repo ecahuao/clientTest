@@ -1,0 +1,27 @@
+<div class="col-md-2">
+        <button class="btn btn-primary btn-indigo" routerLink="/software/add">
+              <i class ="fas fa-plus-circle"></i>
+        </button>
+  </div>
+  <div class="col-md-6" *ngFor="let software of softwares">
+        <div class="card text-center">
+              <div class="card-header  justify-content bg-dark  text-white align-items-center d-flex">
+                    <div class="col-md-9">
+                          {{software.softwareName}} 
+                    </div>
+                    <div class="col-md-1">    
+                          <button class="btn btn-danger" (click)="deleteSoftware(software.softwareId)" >
+                          <i class="fas fa-trash-alt"></i>
+                          </button>
+                    </div>
+              </div>
+              <div class="card-body">
+                    <p>
+                          {{software.softwareId}}   {{software.softwareName}}
+                    </p>
+                    <a [routerLink]="['/software/edit',software.softwareId]" class="btn btn-icon btn-block btn-indigo">
+                          edit software
+                    </a>
+              </div>
+        </div>
+  </div>

@@ -1,0 +1,28 @@
+<p>hardware-list works!</p>
+<div class="col-md-2">
+    <button class="btn btn-primary btn-indigo" routerLink="/hardware/add">
+          <i class ="fas fa-plus-circle"></i>
+    </button>
+</div>
+<div class="col-md-6" *ngFor="let hardware of hardwares">
+    <div class="card text-center">
+          <div class="card-header  justify-content bg-dark  text-white align-items-center d-flex">
+                <div class="col-md-9">
+                      {{hardware.hardwareName}} 
+                </div>
+                <div class="col-md-1">    
+                      <button class="btn btn-danger" (click)="deleteHardware(hardware.hardwareId)" >
+                      <i class="fas fa-trash-alt"></i>
+                      </button>
+                </div>
+          </div>
+          <div class="card-body">
+                <p>
+                      {{hardware.hardwareId}}   {{hardware.hardwareName}}
+                </p>
+                <a [routerLink]="['/hardware/edit',hardware.hardwareId]" class="btn btn-icon btn-block btn-indigo">
+                      edit hardware
+                </a>
+          </div>
+    </div>
+</div>
