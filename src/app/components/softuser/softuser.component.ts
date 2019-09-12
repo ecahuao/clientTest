@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./softuser.component.css']
 })
 export class SoftuserComponent implements OnInit {
-
+//comentario
 constructor() { }
 dropdownList = [];
   selectedItems = [];
